@@ -53,7 +53,7 @@ flowchart TD
     end
 
     Renderer -->|Returns Pixel Buffer| Worker
-    Worker -.->|Emits QImage (Cross-Thread Signal)| UI
+    Worker -.->|Emits QImage Cross-Thread Signal| UI
 ```
 
 ## 🚀 Getting Started
