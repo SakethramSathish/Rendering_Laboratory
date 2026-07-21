@@ -1,0 +1,44 @@
+# ==========================================
+# RenderLab Engine - Core Dependencies
+# Python 3.13+ Required
+# ==========================================
+
+# GUI Framework
+# Requirement: Presentation Layer and Desktop UI
+PySide6>=6.6.0
+
+# Mathematics & Array Processing
+# Requirement: Core math, vector calculations, and image buffers
+numpy>=1.26.0
+
+# Image Processing
+# Requirement: Image exporting, saving, and texture handling
+Pillow>=10.2.0
+
+# Charts & Visualization
+# Requirement: Performance dashboards and mathematical visualization
+pyqtgraph>=0.13.3
+
+# Configuration Management
+# Requirement: Parsing YAML configuration settings
+PyYAML>=6.0.1
+
+# ==========================================
+# Development, Testing & Profiling (Optional for End-Users)
+# ==========================================
+
+# Testing Framework
+# Requirement: Independent subsystem testing
+pytest>=8.0.0
+pytest-qt>=4.4.0         # Qt/PySide6 testing integration
+pytest-benchmark>=4.0.0  # Performance benchmarking
+
+# Profiling
+# Requirement: Performance monitoring and optimization targets
+pyinstrument>=4.6.2
+
+# Code Quality & Static Analysis
+# Requirement: Clean Architecture and long-term maintainability
+black>=24.0.0            # Code formatting
+flake8>=7.0.0            # Linting
+mypy>=1.8.0              # Static type checking

@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "renderlab-engine"
+version = "1.0.0"
+description = "A Professional CPU Rendering Engine & Interactive Computer Graphics Laboratory"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    { name = "RenderLab Team" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics :: 3D Rendering",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "PySide6>=6.6.0",
+    "numpy>=1.26.0",
+    "Pillow>=10.2.0",
+    "pyqtgraph>=0.13.3",
+    "PyYAML>=6.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-qt>=4.4.0",
+    "pytest-benchmark>=4.0.0",
+    "pyinstrument>=4.6.2",
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "mypy>=1.8.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["renderlab*"]
+
+# ==========================================
+# Tool Configurations
+# ==========================================
+
+[tool.black]
+line-length = 100
+target-version = ['py313']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+strict_optional = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers --tb=short"
+testpaths = [
+    "tests",
+    "renderlab",
+]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "unit: marks tests as isolated unit tests",
+    "integration: marks tests as cross-module integration tests",
+    "visual: marks tests that perform image baseline comparisons",
+    "slow: marks tests that take a long time to render"
+]
